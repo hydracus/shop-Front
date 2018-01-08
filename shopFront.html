@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/*
+color banner #181914
+placement: #efefef;
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+  font-size: 10px;
+}
+body {
+	line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a, li {
+  font-family: 'Lato', sans-serif;
+}
+ .om-header{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr auto 250px ;
+    grid-template-rows: 48px 130px;
+    grid-template-areas: 
+    'mm-header__contact mm-header__contact mm-header__contact'
+    'am-header__logo mm-header__userLoginUL am-header__search';
+    align-items: center;
+  }
+  .mm-header__userLoginUL {
+    height: 48px;
+    display: flex; 
+    align-items: center; 
+    grid-area: mm-header__userLoginUL;
+  }
+  .mm-header__userLoginLI {
+    padding-left: 10px;
+    padding-right: 10px; 
+    font-size: 1.6rem;
+  }
+  .am-header__search {
+    height: 48px;
+    max-width: 250px;
+    grid-area: am-header__search;
+    border: 1px solid grey;
+    font-size: 1.6rem;
+    line-height: 48px;
+    color: grey;
+    padding-left: 1rem;
+  }
+  .mm-header__contact {
+    grid-area: mm-header__contact;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-bottom: 1px solid grey;
+  }
+  .am-header__logo {
+    width: 240px;
+    height: 52px;
+    grid-area: am-header__logo;
+    background-color: #efefef;
+  }
+  .am-header__phoneNo, .am-header__location, .am-header__blog {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.2rem;
+  }
+  .am-header__phoneNo {
+    flex-grow: 1;
+    font-size: 1.6rem;
+  }
+  .mm-content__headerUL {
+    display: flex;
+    height: 85px;
+    align-items: center;
+  } 
+  .am-content__headerLI {
+    font-size: 1.6rem;
+    flex-grow: 1;
+    text-align: center;
+  }
+@media (max-width: 700px) {
+  .pm-pageWrap {
+   position: relative;
+   left: 0px;
+   transition: left 0.3s;
+  }
+  .pm-pageWrap--left-calc54 {
+   left: calc(100% - 54px);
+   width: 54px;
+   height: 95vh;
+   overflow: hidden;
+  }
+  .om-Nav {
+    background-color: #313233;
+    height: 60px;
+    position: absolute;
+    width: 100%;
+    top:111px;
+    display: flex;
+    align-content: center;
+    font-size: 2rem;
+    line-height: 60px;
+  }
+  .mm-Nav__icon {
+    height: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    color: grey;
+  }
+  .mm-Nav__shop {
+    flex-grow: 1;
+    color: grey;
+  }
+  .mm-Nav__cartIcon {
+    color: white;
+    padding-right: 15px;
+  }
+  .om-slideWrap {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    /*right: 54px;*/
+    width: 0px; /*calc(100% - 54px);*/
+    transition: width 0.3s;
+    overflow: hidden;
+    padding-top: 20px;
+    background-color: black;
+  }
+  .om-slideWrap--left-cal54 {
+    width: calc(100% - 54px);
+  }
+  .om-slideWrap--overflow-scroll {
+    overflow: scroll;
+  }
+  .am-slideWrap__closeWrap {
+    display: block;
+    height: 100%;
+  }
+  .mm-slideWrap__menuUL {
+    min-height: 100vh;
+  }
+
+  .mm-slideWrap__menuUL li {
+    color: white;
+    height: 48px;
+    background-color: #3c3d3f;
+    border-bottom: 1px solid white;
+    position: relative;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    font-size: 1.6rem;
+    line-height: 48px;
+
+  }
+  .mm-slideWrap__menuUL li a {
+    padding-left: 10px;
+  }
+  .om-subWrap {
+    width: 0px;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+    right: 0px;
+    margin-right: -20px;
+    background-color: black;
+    transition: width 0.3s;
+    overflow: hidden;
+  }
+  .om-subWrap--width-cal140 {
+    width: calc(100% + 40px);
+  }
+  .om-subWrap--width-0 {
+    width: 0px;
+  }
+  .mm-subWrap__title {
+    background-color: #595959;
+    color: black;
+    height: 48px;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+  }
+  .am-subWrap__titleLink{
+    display: block;
+    height: 100%;
+    color: white;
+    font-size: 1.6rem;
+  }
+  .om-subWrap li {
+    background-color: white;
+    color:black;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    transition: background-color 0.2s
+  }
+  .om-subWrap li:hover {
+    background-color: #dbdbdb;	
+  }
+
+  .om-header {
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 1fr 64px 100px;
+     grid-template-areas: 
+     'mm-header__userLoginUL mm-header__userLoginUL'
+     'am-header__logo am-header__search'
+     'mm-header__contact mm-header__contact';
+  }
+  .am-header__logo {
+    height: 64px;
+  }
+  .mm-header__contact {
+    height: 40px;
+    background-color: grey;
+    align-self: end;
+    justify-self: center;
+  }
+  .am-header__location {
+    display: none;
+  }
+  .am-header__blog {
+    display: none;
+  }
+}
+
+ @media (min-width: 700px) {
+    .om-Nav {
+      display: none;
+    }
+    .om-slideWrap {
+      
+     /* width: 100%;
+      height: 90px;*/
+    }
+    .mm-slideWrap__menuUL {
+      background-color: red;
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 90px;
+      align-items: center;
+      justify-content: center;
+    }
+    .mm-slideWrap__menuLI--disabled {
+      display: none;
+    }
+    .mm-slideWrap__parentLI, .mm-slideWrap__menuLI {
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 100%;
+      line-height: 90px;
+      color: white;
+      background-color: #181914;
+      cursor: pointer;
+      flex-grow: 1;
+      text-align: center;
+      font-size: 1.6rem;
+    }
+    .om-subWrap {
+      position: absolute;
+      top: 90px;
+      width: 100vw;
+      background-color: white;
+      left: 0px;
+      max-height: 0px;
+      transition: max-height 0.3s;
+      overflow: hidden;
+    }
+    .mm-slideWrap__parentLI:hover .om-subWrap {
+      display: block;
+      max-height: 400px;
+    }
+    .mm-subWrap__title {
+      display: none;
+    }
+    .mm-subWrap__subItemUL {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      padding-top: 30px;
+      padding-bottom: 50px;
+      border: solid 1px grey;
+    }
+    .mm-subWrap__subItemLI {
+      height: 48px;
+      width: 28%;
+      line-height: 48px;
+      text-align: left;
+      margin-left: 15px;
+      padding-left: 15px;
+      margin-right: 15px;
+      border-bottom: 1px solid grey;
+      font-size: 1.6rem;
+      color: black;
+    }
+    .mm-subWrap__subItemLI:hover {
+      background-color: #efefef;
+    }
+  }
+	</style>
+<!-- atom molecule organism
+om 
+od
+mm
+pm
+
+mb - mobile
+dt - desktop
+BEM
+Block 
+
+Modifier
+.block--cssproperty-cssvalue
+
+.  
+pm-pageWrap pm-pageWrap--left-calc54 
+Element
+.block__item -->
+<style type="text/css">
+ .mm-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 450px 310px 310px;
+    grid-gap: 10px 10px;
+    grid-template-areas: 
+    'mm-content__hero mm-content__hero mm-content__hero'
+    'mm-content__location mm-content__arrangements mm-content__arrangements'
+    'mm-content__events mm-content__events mm-content__history ';
+  }
+ .mm-content__hero {
+    background-color: #efefef;
+    grid-area: mm-content__hero;
+    background-size: cover;
+    background-position: right;
+ }
+ .mm-content__location {
+    background-color: #efefef;
+    grid-area: mm-content__location;
+    background-size: cover;
+    background-position: center;
+ }
+ .mm-content__arrangements {
+    background-color: #efefef;
+    background-color: red;
+    grid-area: mm-content__arrangements;
+    background-size: cover;
+ }
+ .mm-content__events {
+    background-color: #efefef;
+    grid-area: mm-content__events;
+    background-size: cover;
+ }
+ .mm-content__history {
+   background-color: #efefef;
+   grid-area: mm-content__history;
+   background-size: cover;
+ }
+
+@media (max-width: 920px) {
+  .mm-content {
+    grid-template-rows: 390px 270px 270px;
+  }
+}
+@media (max-width: 700px) {
+
+  .mm-content__headerUL {
+    display: none;
+  }
+  .mm-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 250px 250px 250px 250px;
+    grid-gap: 10px 10px;
+    grid-template-areas: 
+    'mm-content__hero'
+    'mm-content__location'
+    'mm-content__arrangements'
+    'mm-content__events' 
+    'mm-content__history';
+  }
+}
+ 
+</style>
+
+<!-- carousel -->
+
+<style>
+.mm-content__designCategory {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.mm_content__designTitle {
+  height: 110px;
+  background-color: white;
+  width: 100%;
+  font-size: 2.2rem;
+  text-align: center;
+  line-height: 110px;
+  font-weight: 600;
+}
+
+.mm-content__carousel {
+ position: relative;
+}
+.mm-content__carouselUL {
+   /* Make this scrollable when needed */
+  overflow-x: auto;
+  /* We don't want vertical scrolling */
+  overflow-y: hidden;
+  /* Make an auto-hiding scroller for the 3 people using a IE */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  /* For WebKit implementations, provide inertia scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* We don't want internal inline elements to wrap */
+  white-space: nowrap;
+  /* Remove the default scrollbar for WebKit implementations */
+  scroll-behavior: smooth;
+  }
+
+.mm-content__carouselUL::-webkit-scrollbar {
+  display: none;
+}  
+.mm-content__carouselLI {
+  width: 25%;
+  height: 30vw;
+  display: inline-block;
+  background-color: orange;  
+  margin-right: -4px;
+  }
+.mm-content__carouselArrowL {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  bottom: 50%;
+  display: inline-block;
+}    
+.mm-content__carouselArrowR {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: red;
+  bottom: 50%;
+  right: 0;
+}
+
+
+@media (max-width: 920px) {
+  .mm-content__carouselLI {
+    width: 33.333%;
+    height: 37vw;
+  }
+}
+@media (max-width: 700px) {
+  .mm-content__carouselLI {
+    width: 50%;
+    height: 55vw;
+  }  
+}
+@media (max-width: 620px) {
+  .mm-content__carouselLI {
+    width: 100%;
+    height: 88vw;
+  }
+}
+</style>
+</head>
+<body>
+<!-- I am the responsive header -->
+<div id = 'mob_PageWrapper' class = 'pm-pageWrap'>
+ <div class ='om-header'>
+   <div class = 'mm-header__login'>
+     <ul class = 'mm-header__userLoginUL'>
+       <li class = 'mm-header__userLoginLI'>login</li>
+       <li class = 'mm-header__userLoginLI'>register</li>
+     </ul>
+   </div>
+   <div class ='am-header__logo'></div>
+   <div class ='am-header__search'>What Are You Looking For?</div>
+   <div class ='mm-header__contact'>
+     <p class ='am-header__phoneNo'>1234567</p>
+     <p class ='am-header__location'>store loction</p>
+     <p class ='am-header__blog'>blog</p>
+  </div>
+ </div>
+
+ <!-- I am the navigation bar for Mobile view -->
+ <div id = 'om-Nav' class = 'om-Nav'>
+   <div class = 'mm-Nav__icon'>
+     <span><i class="fa fa-bars fa-lg mm-Nav__iconBars"></i></span>     
+   </div>
+   <div class = 'mm-Nav__shop'>SHOP</div>
+   <div class = 'mm-Nav__cartIcon'><i class="fa fa-shopping-cart fa-lg"></i></div>
+ </div>
+ 
+<!-- I am navigation menu list for both mobile and desktop -->
+ <div id = 'mob_SlideWrapper' class = 'om-slideWrap'> 
+  <ul class = 'mm-slideWrap__menuUL'>
+    <li class = 'mm-slideWrap__menuLI mm-slideWrap__menuLI--disabled'>
+      <a class = 'am-slideWrap__closeWrap'>HOME</a>
+    </li>
+    <li class = 'mm-slideWrap__parentLI'>
+      <a>OCCASIONS</a>
+      <span>></span>
+      <div class = 'om-subWrap'>
+        <div class = 'mm-subWrap__title'><a class = 'am-subWrap__titleLink'>< OCCASION</a></div>
+        <ul class = 'mm-subWrap__subItemUL'>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Birthday</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Anniversary</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Birthday</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Anniversary</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class = 'mm-slideWrap__menuLI'><a>BY TYPE</a></li>
+    <li class = 'mm-slideWrap__menuLI'><a>I JUST WANT TO SAY</a></li>
+    <li class = 'mm-slideWrap__menuLI'><a>PRODUCTS OF THE WEEK </a></li>
+    <li class = 'mm-slideWrap__menuLI'><a>SEE ALL ITEMS</a></li>
+    <li class = 'mm-slideWrap__menuLI'><a>WHY US</a></li>
+  </ul>
+</div> 
+
+<style>
+  .mm-content__locationWrap {
+    text-align: center;
+  }
+  .am-content__locationTitle {
+    font-size: 2.4rem;
+  }
+  .am-content__locationSubtitle {
+    font-size: 3.2rem;
+  }
+  .am-content__locationButton {
+    width: 220px;
+    height: 48px;
+    border: 3px solid black;
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: white;
+    font-size: 1.6rem;
+    line-height: 48px;
+    text-align: center;
+  }
+</style>
+<!-- I am the Content Section -->
+<div class = 'om-content'>
+  <ul class ='mm-content__headerUL'>
+    <li class = 'am-content__headerLI'>SAME DAY DELIVERY<br>MONDAY-SATURDAY</li>
+    <li class = 'am-content__headerLI'>Figure 2</li>
+    <li class = 'am-content__headerLI'>Figure 3</li>
+  </ul>
+  <div class = 'mm-content'>
+    <div class = 'mm-content__hero'>
+    </div>
+    <div class = 'mm-content__location'>
+      <div class = 'mm-content__locationWrap'>
+        <h1 class = 'am-content__locationTitle'>OUR STORE</h1>
+        <h2 class = 'am-content__locationSubtitle'>LOCATIONS</h2>
+        <div class = 'am-content__locationButton'><p>VISIT US IN STORE</p></div>
+      </div>
+    </div>
+    <div class = 'mm-content__arrangements'></div>
+    <div class = 'mm-content__events'></div>
+    <div class = 'mm-content__history'></div>
+  </div>
+</div>
+<!-- I am the Content Carousel Block -->
+<div class = 'mm-content__designCategory'>
+  <div class = 'mm_content__designTitle'>
+    <h1>PRODUCT OF THE WEEK</h1>
+  </div>
+  <div class = 'mm-content__carousel'>
+    <ul class = 'mm-content__carouselUL dragscroll'>
+      <li class = 'mm-content__carouselLI'>1</li>
+      <li class = 'mm-content__carouselLI'>2</li>
+      <li class = 'mm-content__carouselLI'>3</li>
+      <li class = 'mm-content__carouselLI'>4</li>
+      <li class = 'mm-content__carouselLI'>5</li>
+      <li class = 'mm-content__carouselLI'>6</li>
+    </ul>
+    <div class = 'mm-content__carouselArrowL'>
+    </div>
+    <div class = 'mm-content__carouselArrowR'>
+    </div>
+  </div>
+</div>
+<style>
+.mm-content__block {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.mm-content__blockTitle {
+  width: 100%;
+  height: 118px;
+  background-color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 118px;
+}
+.mm-content__blockText {
+  width: 50%;
+  height: 280px;
+  background-color: black;
+}
+.mm-content__blockPicture {
+  width: 50%;
+  height: 280px;
+  background-color: #efefef;
+  background-position: center;
+}
+@media (max-width: 1100px) {
+  .mm-content__blockText, .mm-content__blockPicture {
+    height: 25vw;
+  }
+}
+
+@media (max-width: 920px) {
+  .mm-content__blockText, .mm-content__blockPicture {
+    height: 32vw;
+  }
+}
+@media (max-width: 750px) {
+  .mm-content__blockText, .mm-content__blockPicture {
+    height: 40vw;
+  } 
+}
+@media (max-width: 690px) {
+  .mm-content__block {
+    width: 100%;
+    flex-wrap: wrap-reverse;
+  }
+  .mm-content__blockText {
+    width: 100%;
+  } 
+  .mm-content__blockPicture {
+    height: 68vw;
+    width: 100%;
+    background-size: cover;
+  } 
+}
+</style>
+<div class ='mm-content__blockTitle'>SEE OUR FULL RANGE AND SHOP NOW</div>
+<div class ='mm-content__block'>
+  <div class ='mm-content__blockText'></div>
+  <div class ='mm-content__blockPicture'>
+  </div>
+</div> 
+  
+<style type="text/css">
+  .mm-content__guaranteeFlex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1240px; 
+    margin: 0 auto;
+    padding-bottom: 70px;
+  }
+  .mm-content__guaranteeTitle {
+    width: 100%;
+    min-height: 105px;
+    text-align: center;
+    line-height: 105px;
+    font-size: 2.4rem;
+  }
+  .mm-content__guaranteeItems {
+    width: 33%;
+    box-sizing: border-box;
+    min-height:210px;
+    text-align: center;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  .am-content__guaranteeIcon {
+    background-color: orange;
+    width: 97px;
+    height: 97px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .am-content__guaranteeHeader {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+  }
+  .am-content__guaranteeText {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+</style>
+<div class = 'mm-content__guaranteeFlex'>
+  <div class ='mm-content__guaranteeTitle'>
+    <h1>Our Shop Guarantee</h1>
+  </div>
+  <div class ='mm-content__guaranteeItems'>
+    <div class = 'am-content__guaranteeIcon'></div>
+    <h1 class = 'am-content__guaranteeHeader'>QUALITY</h1>
+    <p class = 'am-content__guaranteeText'>
+      Our purchasing team expertly selects the highest quality blooms direct from markets and farms around the globe.
+    </p>
+  </div>
+  <div class ='mm-content__guaranteeItems'>
+    <div class = 'am-content__guaranteeIcon'></div>
+    <h1 class = 'am-content__guaranteeHeader'>QUALITY</h1>
+    <p class = 'am-content__guaranteeText'>
+      Our purchasing team expertly selects the highest quality blooms direct from markets and farms around the globe.
+    </p>
+  </div>
+  <div class ='mm-content__guaranteeItems'>
+    <div class = 'am-content__guaranteeIcon'></div>
+    <h1 class = 'am-content__guaranteeHeader'>QUALITY</h1>
+    <p class = 'am-content__guaranteeText'>
+      Our purchasing team expertly selects the highest quality blooms direct from markets and farms around the globe.
+    </p>
+  </div>
+</div>
+  
+<style>
+  .mm-content__bannerFlex {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1240px;
+    margin: 0 auto;
+    justify-content: space-around;
+    padding-bottom: 70px;
+  }
+  .mm-content__bannerItem {
+    min-height: 310px;
+    width: 48%;
+    background-color: #efefef;
+  }
+  @media (max-width: 920px) {
+    .mm-content__bannerItem {
+      min-height: 270px;
+    }
+  }
+  @media (max-width: 690px) {
+    .mm-content__bannerItem {
+      width: 100%;
+      margin: 5px;
+      height: 260px;
+    }
+  }
+
+</style>
+  <div class = 'mm-content__bannerFlex'>
+    <div class = 'mm-content__bannerItem'></div>
+    <div class = 'mm-content__bannerItem'></div>
+  </div>
+
+<style>
+.om-footer {
+  background-color: #181914;
+}
+.mm-footer__subscribe {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  background-color: #232326;
+}
+.mm-footer__contentFlex {
+  display: flex;
+  max-width: 1240px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.mm-footer__logo {
+  width: 25%;
+  padding-top: 75px;
+  padding-bottom: 50px;
+}
+.mm-footer__linksUL {
+  width: 25%;
+  padding-top: 75px;
+  padding-bottom: 50px;
+  font-size: 1.6rem;
+  color: #57585b;
+  line-height: 2.4rem;
+}
+</style>
+  <div class = 'om-footer'>
+    <div class = 'mm-footer__subscribe'><h1>Hello world</h1></div>
+    <div class = 'mm-footer__contentFlex'>
+          <div class = 'mm-footer__logo'></div>
+          <ul class = 'mm-footer__linksUL'>
+            <li>group 1</li>
+            <li>group 1a</li>
+            <li>group 1b</li>
+            <li>group 1c</li>
+            <li>group 1d</li>
+          </ul>
+          <ul class = 'mm-footer__linksUL'>
+            <li>group 2 </li>
+            <li>group 2g</li>
+            <li>group 2a</li>
+            <li>group 2b</li>
+            <li>group 2c</li>
+            <li>group 2d</li>
+          </ul>
+          <ul class = 'mm-footer__linksUL'>
+            <li>group 3</li>
+          </ul>
+    </div>
+  </div>
+  <p>
+  atom molecule organism
+  om 
+  od
+  mm
+
+  mb - mobile
+  dt - desktop
+  BEM
+  Block	
+
+  Modifier
+  .block--cssproperty-cssvalue
+  .  
+
+  Element
+  .block__item
+
+  desk_NavWrapper
+  nav bar	
+    mob nav default
+    It should have a mobile nav bar 
+      It should have a drop down menu icon on left hand side
+      It should display shop on left hand side
+      It should display shopbag icon on right hand side
+   
+    mob menu icon clicked
+    It should push the window body to the right hand side
+      It should slide the menu from the left hand side
+      It should display an overlay over the window body. 
+   
+    clicking menu items in slider menu
+      sub item menu should slide from right to left 
+      list items should be displayed vertically 
+      scroll bar is present and visible.
+
+    views desktop nav bar 
+      it should show the 'myCart' next to shop bag icon on right hand side
+      it should show nav menu icons
+      it should have hover over nav menu
+      the submenu should be full width
+
+    nav bar icons to be seen. 
+    hov
+
+    making a carousel 
+    It should slide a 
+   </p>
+   </div>
+</div>
+ 
+<script src="shopFront.js"></script>
+<script src="horizontalCarousel.js"></script>
+</body>
+</html>
