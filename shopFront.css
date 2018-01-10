@@ -1,10 +1,9 @@
-<style type="text/css">
-		/* http://meyerweb.com/eric/tools/css/reset/ 
+    /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 /*
-fffwerer
+shopFront v1
 Random comment 3 hotfix
 Color Scheme
 color banner #181914
@@ -25,39 +24,39 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 html {
   font-size: 10px;
 }
 body {
-	line-height: 1;
+  line-height: 1;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 a, li {
   font-family: 'Lato', sans-serif;
@@ -241,7 +240,7 @@ a, li {
     transition: background-color 0.2s
   }
   .om-subWrap li:hover {
-    background-color: #dbdbdb;	
+    background-color: #dbdbdb;  
   }
 
   .om-header {
@@ -345,9 +344,10 @@ a, li {
       background-color: #efefef;
     }
   }
-	</style>
 
-	<style type="text/css">
+
+/*CONTENT STYLES*/
+
  .mm-content {
     max-width: 1240px;
     margin: 0 auto;
@@ -414,5 +414,259 @@ a, li {
     'mm-content__history';
   }
 }
- 
-</style>
+
+.mm-content__designCategory {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.mm_content__designTitle {
+  height: 110px;
+  background-color: white;
+  width: 100%;
+  font-size: 2.2rem;
+  text-align: center;
+  line-height: 110px;
+  font-weight: 600;
+}
+
+.mm-content__carousel {
+ position: relative;
+}
+.mm-content__carouselUL {
+   /* Make this scrollable when needed */
+  overflow-x: auto;
+  /* We don't want vertical scrolling */
+  overflow-y: hidden;
+  /* Make an auto-hiding scroller for the 3 people using a IE */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  /* For WebKit implementations, provide inertia scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* We don't want internal inline elements to wrap */
+  white-space: nowrap;
+  /* Remove the default scrollbar for WebKit implementations */
+  scroll-behavior: smooth;
+  }
+
+.mm-content__carouselUL::-webkit-scrollbar {
+  display: none;
+}  
+.mm-content__carouselLI {
+  width: 25%;
+  height: 30vw;
+  display: inline-block;
+  background-color: orange;  
+  margin-right: -4px;
+  }
+.mm-content__carouselArrowL {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  bottom: 50%;
+  display: inline-block;
+}    
+.mm-content__carouselArrowR {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: red;
+  bottom: 50%;
+  right: 0;
+}
+
+
+@media (max-width: 920px) {
+  .mm-content__carouselLI {
+    width: 33.333%;
+    height: 37vw;
+  }
+}
+@media (max-width: 700px) {
+  .mm-content__carouselLI {
+    width: 50%;
+    height: 55vw;
+  }  
+}
+@media (max-width: 620px) {
+  .mm-content__carouselLI {
+    width: 100%;
+    height: 88vw;
+  }
+}
+
+  .mm-content__locationWrap {
+    text-align: center;
+  }
+  .am-content__locationTitle {
+    font-size: 2.4rem;
+  }
+  .am-content__locationSubtitle {
+    font-size: 3.2rem;
+  }
+  .am-content__locationButton {
+    width: 220px;
+    height: 48px;
+    border: 3px solid black;
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: white;
+    font-size: 1.6rem;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  .mm-content__block {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.mm-content__blockTitle {
+  width: 100%;
+  height: 118px;
+  background-color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 118px;
+}
+.mm-content__blockText {
+  width: 50%;
+  height: 280px;
+  background-color: black;
+}
+.mm-content__blockPicture {
+  width: 50%;
+  height: 280px;
+  background-color: #efefef;
+  background-position: center;
+}
+@media (max-width: 1100px) {
+  .mm-content__blockText, .mm-content__blockPicture {
+    height: 25vw;
+  }
+}
+
+@media (max-width: 920px) {
+  .mm-content__blockText, .mm-content__blockPicture {
+    height: 32vw;
+  }
+}
+@media (max-width: 750px) {
+  .mm-content__blockText, .mm-content__blockPicture {
+    height: 40vw;
+  } 
+}
+@media (max-width: 690px) {
+  .mm-content__block {
+    width: 100%;
+    flex-wrap: wrap-reverse;
+  }
+  .mm-content__blockText {
+    width: 100%;
+  } 
+  .mm-content__blockPicture {
+    height: 68vw;
+    width: 100%;
+    background-size: cover;
+  } 
+}
+
+ .mm-content__guaranteeFlex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1240px; 
+    margin: 0 auto;
+    padding-bottom: 70px;
+  }
+  .mm-content__guaranteeTitle {
+    width: 100%;
+    min-height: 105px;
+    text-align: center;
+    line-height: 105px;
+    font-size: 2.4rem;
+  }
+  .mm-content__guaranteeItems {
+    width: 33%;
+    box-sizing: border-box;
+    min-height:210px;
+    text-align: center;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  .am-content__guaranteeIcon {
+    background-color: orange;
+    width: 97px;
+    height: 97px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .am-content__guaranteeHeader {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+  }
+  .am-content__guaranteeText {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+   .mm-content__bannerFlex {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1240px;
+    margin: 0 auto;
+    justify-content: space-around;
+    padding-bottom: 70px;
+  }
+  .mm-content__bannerItem {
+    min-height: 310px;
+    width: 48%;
+    background-color: #efefef;
+  }
+  @media (max-width: 920px) {
+    .mm-content__bannerItem {
+      min-height: 270px;
+    }
+  }
+  @media (max-width: 690px) {
+    .mm-content__bannerItem {
+      width: 100%;
+      margin: 5px;
+      height: 260px;
+    }
+  }
+
+  .om-footer {
+  background-color: #181914;
+}
+.mm-footer__subscribe {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  background-color: #232326;
+}
+.mm-footer__contentFlex {
+  display: flex;
+  max-width: 1240px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.mm-footer__logo {
+  width: 25%;
+  padding-top: 75px;
+  padding-bottom: 50px;
+}
+.mm-footer__linksUL {
+  width: 25%;
+  padding-top: 75px;
+  padding-bottom: 50px;
+  font-size: 1.6rem;
+  color: #57585b;
+  line-height: 2.4rem;
+}
