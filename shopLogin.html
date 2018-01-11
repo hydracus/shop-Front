@@ -66,7 +66,24 @@
   </ul>
 </div> 
 
+<style type="text/css">
 
+  .mm-content {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+@media (max-width: 700px) {
+  .mm-content__headerUL {
+    display: none;
+  }
+}
+.om-content {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+
+</style>
 <!-- I am the Content Section -->
 <div class = 'om-content'>
   <ul class ='mm-content__headerUL'>
@@ -74,38 +91,147 @@
     <li class = 'am-content__headerLI'>FEATURE AND BENEFIT 2</li>
     <li class = 'am-content__headerLI'>FEATURE AND BENEFIT 3</li>
   </ul>
-  <ul class = 'mm-content__breadcrumbsUL'>
-    <li class = 'mm-content__breadcrumbsLI'>HOME \</li>
-    <li class = 'mm-content__breadcrumbsLI'>CATEGORY \</li>
-    <li class = 'mm-content__breadcrumbsLI'>SUBCATEGORY</li>
-  </ul>
-  <div class = 'mm-content__categoryDescription'>
-    <h1 class = 'mm-content__categoryTitle'>
-      SUBCATEGORY
-    </h1>
-    <p class = 'mm-content__categoryText'>
-       The memorial was unveiled in 1922 and consists of a 10-metre (33 ft) pylon, topped by an effigy of a recumbent soldier, and Lutyens' characteristic Stone of Remembrance. A public meeting in February 1919 established a consensus to create a monument and a fund for the families of wounded servicemen. The meeting agreed to commission Lutyens to design the monument
-    </p>
-  </div>
-  <ul class = 'mm-content__categoryUL'>
-    <li class = 'mm-content__categoryLI'></li>
-    <li class = 'mm-content__categoryLI'></li>
-    <li class = 'mm-content__categoryLI'></li>
-    <li class = 'mm-content__categoryLI'></li>
-    <li class = 'mm-content__categoryLI'></li>
-    <li class = 'mm-content__categoryLI'></li>
-    <li class = 'mm-content__categoryLI'></li>
-    <li class = 'mm-content__categoryLI'></li>
-  </ul>
-
 </div>
 
-<div class = 'om-productToolbar'>
-    <div class = 'mm-productToolbar__amountToDisplay'>
-      <p class = >SHOW <span class = 'am-productToolbar__amountDropdown'>30</span> TO DISPLAY</p>
+<style type="text/css">
+.om-login {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.6rem;
+  height: 75vh;
+  align-content: flex-start;
+}
+.mm-login__Title {
+  padding-top: 30px;
+  font-size: 3rem;
+  width: 100%;
+  padding-bottom: 30px;
+}
+.mm-login__registeredCustomers {
+  width: 50%;
+}
+.mm-login__registeredCustomersTitle {
+}
+.mm-login__registeredCusEmailDiv {
+  padding-bottom: 20px;
+}
+.am-login__registeredCusEmailLabel {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.am-login__registeredCusEmailInput {
+  height: 30px;
+  width: 30rem;
+}
+.am-login__registeredCusPasswordLabel {
+  padding-bottom: 10px;
+}
+.am-login__registeredCusPasswordInput {
+  height: 30px;
+  width: 30rem;
+}
+.mm-login__newCustomers {
+  width: 50%;
+}
+.mm-login__newCustomersTitle {
+}
+.mm-login__toolbar {
+  padding-top: 20px;
+}
+.am-login__toolbarButton {
+  height: 42px;
+  background-color: white;
+  border: solid 3px black;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.mm-login__toolbarForgotDiv {
+  display: inline-block;
+  padding-left: 10px;
+}
+.am-login__newCusRegisterButton {
+  height: 42px;
+  background-color: white;
+  border: solid 3px black;
+  margin-top: 20px; 
+  padding-left: 30px;
+  padding-right: 30px;
+}
+@media (max-width: 690px) {
+  .om-login {
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .am-login__registeredCusEmailInput {
+    width: 100%;
+  }
+  .am-login__registeredCusPasswordInput {
+    width: 100%
+  }
+  .mm-login__registeredCustomers{
+    width: 100%;
+  }
+  .am-login__newCusRegisterButton {
+    width: 100%;
+  }
+  .mm-login__toolbarForgotDiv {
+    display: block;
+    text-align: center; 
+    padding-top: 10px;
+  }
+  .mm-login__newCustomers {
+    margin-top: 30px;
+    width: 100%;
+    padding-bottom: 70px;
+  }
+
+  .am-login__toolbarButton {
+    width: 100%
+  }
+}
+</style>
+<!-- I am the Login Section -->
+  <div class = 'om-login'>
+    <h1 class = 'mm-login__Title'>CUSTOMER LOGIN</h1>
+    <div class = 'mm-login__registeredCustomers'>
+      <p class = 'am-login__registeredCustomersTitle'>REGISTERED CUSTOMERS</p>
+      <hr>
+      <form class = 'mm-login__registeredCustomersForm'>
+        <fieldset class= "mm-login__registeredCustomersFieldset">
+          <p class="am-login__registeredCustomersText">If you have an account, sign in with your email address.</p>
+            <div class= "mm-login__registeredCusEmailDiv">
+              <div class = "am-login__registeredCusEmailLabel"><label>Email</label></div>
+              <div><input class = "am-login__registeredCusEmailInput" type="email" name=""></div>
+            </div>
+            <div class = "mm-login__registeredCusPasswordDiv">
+              <diV class = "am-login__registeredCusPasswordLabel"><label>Password</label></diV>
+              <div><input class = "am-login__registeredCusPasswordInput" type="Password" name=""></div>
+            </div>
+            <div class = "mm-login__toolbar">
+              <button class = "am-login__toolbarButton">LOGIN</button>
+              <div class = "mm-login__toolbarForgotDiv"><a class="am-login__tooblbarForgotPassword">Forgot Your Password?</a></div>
+            </div>
+        </fieldset>
+      </form>
     </div>
-</div>
-<!-- I am the content footer section -->
+    <div class = 'mm-login__newCustomers'>
+      <p class = 'am-login__newCustomersTitle'>NEW CUSTOMERS</p>
+      <hr>
+      <form class = 'mm-login__registeredCustomersForm'>
+        <fieldset>
+          <p>Creating an account has many benefits: check out faster, keep more than one address, track orders and more..</p>
+            <div>
+              <button class="am-login__newCusRegisterButton">REGISTER</button>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+<!-- I am the footer section -->
   <div class = 'om-footer'>
     <div class = 'mm-footer__subscribe'><h1>Hello world</h1></div>
     <div class = 'mm-footer__contentFlex'>
