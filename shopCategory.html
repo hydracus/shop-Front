@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="shopCategory.css">
+</head>
+<body>
+<!-- I am the responsive header -->
+<div id = 'mob_PageWrapper' class = 'pm-pageWrap'>
+ <div class ='om-header'>
+   <div class = 'mm-header__login'>
+     <ul class = 'mm-header__userLoginUL'>
+       <li class = 'mm-header__userLoginLI'>login</li>
+       <li class = 'mm-header__userLoginLI'>register</li>
+     </ul>
+   </div> 
+   <div class ='am-header__logo'><a href="index.html">PLACE HOME LOGO</a></div>
+   <div class ='am-header__search'>What Are You Looking For?</div>
+   <div class ='mm-header__contact'>
+     <p class ='am-header__phoneNo'>1234567</p>
+     <p class ='am-header__location'>store loction</p>
+     <p class ='am-header__blog'>blog</p>
+  </div>
+ </div>
+
+ <!-- I am the navigation bar for Mobile view -->
+ <div id = 'om-Nav' class = 'om-Nav'>
+   <div class = 'mm-Nav__icon'>
+     <span><i class="fa fa-bars fa-lg mm-Nav__iconBars"></i></span>     
+   </div>
+   <div class = 'mm-Nav__shop'>SHOP</div>
+   <div class = 'mm-Nav__cartIcon'><i class="fa fa-shopping-cart fa-lg"></i></div>
+ </div>
+ 
+<!-- I am navigation menu list for both mobile and desktop -->
+ <div id = 'mob_SlideWrapper' class = 'om-slideWrap'> 
+  <ul class = 'mm-slideWrap__menuUL'>
+    <li class = 'mm-slideWrap__menuLI mm-slideWrap__menuLI--disabled'>
+      <a class = 'am-slideWrap__closeWrap'>HOME</a>
+    </li>
+    <li class = 'mm-slideWrap__parentLI'>
+      <a>OCCASIONS</a>
+      <span>></span>
+      <div class = 'om-subWrap'>
+        <div class = 'mm-subWrap__title'><a class = 'am-subWrap__titleLink'>< OCCASION</a></div>
+        <ul class = 'mm-subWrap__subItemUL'>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Birthday</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Anniversary</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Birthday</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Anniversary</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+          <li class = 'mm-subWrap__subItemLI'><a>Christmas</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class = 'mm-slideWrap__menuLI'><a>BY TYPE</a></li>
+    <li class = 'mm-slideWrap__menuLI'><a>I JUST WANT TO SAY</a></li>
+    <li class = 'mm-slideWrap__menuLI'><a>PRODUCTS OF THE WEEK </a></li>
+    <li class = 'mm-slideWrap__menuLI'><a>SEE ALL ITEMS</a></li>
+    <li class = 'mm-slideWrap__menuLI'><a>WHY US</a></li>
+  </ul>
+</div> 
+
+<style type="text/css">
+
+  .mm-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+  }
+
+
+@media (max-width: 920px) {
+  .mm-content {
+    grid-template-rows: 390px 270px 270px;
+  }
+}
+@media (max-width: 700px) {
+
+  .mm-content__headerUL {
+    display: none;
+  }
+  .mm-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+  }
+}
+
+.om-content {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+.mm-content__breadcrumbsUL {
+  display: flex;
+}
+.mm-content__breadcrumbsLI {
+  padding-left: 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.mm-content__categoryTitle {
+  padding-top: 30px;
+  font-size: 3rem;
+}
+.mm-content__categoryText {
+  padding-top: 20px;
+  font-size: 1.4rem;
+}
+
+
+.mm-content__categoryUL {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mm-content__categoryLI {
+  width: 25%;
+  height: 42rem;
+  background-color: grey;
+  box-sizing: border-box;
+  border: solid 1px white;
+}
+@media (max-width: 1240px) {
+  .mm-content__categoryLI {
+    height: 36.2vw;
+  }
+}
+
+@media (max-width: 920px) {
+  .mm-content__categoryLI {
+    width: 50%;
+    height: 65vw;
+  }
+}
+</style>
+<!-- I am the Content Section -->
+<div class = 'om-content'>
+  <ul class ='mm-content__headerUL'>
+    <li class = 'am-content__headerLI'>SAME DAY DELIVERY<br>MONDAY-SATURDAY</li>
+    <li class = 'am-content__headerLI'>FEATURE AND BENEFIT 2</li>
+    <li class = 'am-content__headerLI'>FEATURE AND BENEFIT 3</li>
+  </ul>
+  <ul class = 'mm-content__breadcrumbsUL'>
+    <li class = 'mm-content__breadcrumbsLI'>HOME \</li>
+    <li class = 'mm-content__breadcrumbsLI'>CATEGORY \</li>
+    <li class = 'mm-content__breadcrumbsLI'>SUBCATEGORY</li>
+  </ul>
+  <div class = 'mm-content__categoryDescription'>
+    <h1 class = 'mm-content__categoryTitle'>
+      SUBCATEGORY
+    </h1>
+    <p class = 'mm-content__categoryText'>
+       The memorial was unveiled in 1922 and consists of a 10-metre (33 ft) pylon, topped by an effigy of a recumbent soldier, and Lutyens' characteristic Stone of Remembrance. A public meeting in February 1919 established a consensus to create a monument and a fund for the families of wounded servicemen. The meeting agreed to commission Lutyens to design the monument
+    </p>
+  </div>
+  <ul class = 'mm-content__categoryUL'>
+    <li class = 'mm-content__categoryLI'></li>
+    <li class = 'mm-content__categoryLI'></li>
+    <li class = 'mm-content__categoryLI'></li>
+    <li class = 'mm-content__categoryLI'></li>
+    <li class = 'mm-content__categoryLI'></li>
+    <li class = 'mm-content__categoryLI'></li>
+    <li class = 'mm-content__categoryLI'></li>
+    <li class = 'mm-content__categoryLI'></li>
+  </ul>
+
+</div>
+<style type="text/css">
+.om-productToolbar {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.mm-productToolbar__amountToDisplay {
+  text-align: right;
+  font-size: 1.6rem;
+}
+
+</style>
+<div class = 'om-productToolbar'>
+    <div class = 'mm-productToolbar__amountToDisplay'>
+      <p class = >SHOW <span class = 'am-productToolbar__amountDropdown'>30</span> TO DISPLAY</p>
+    </div>
+</div>
+<!-- I am the content footer section -->
+  <div class = 'om-footer'>
+    <div class = 'mm-footer__subscribe'><h1>Hello world</h1></div>
+    <div class = 'mm-footer__contentFlex'>
+          <div class = 'mm-footer__logo'></div>
+          <ul class = 'mm-footer__linksUL'>
+            <li>group 1</li>
+            <li>group 1a</li>
+            <li>group 1b</li>
+            <li>group 1c</li>
+            <li>group 1d</li>
+          </ul>
+          <ul class = 'mm-footer__linksUL'>
+            <li>group 2 </li>
+            <li>group 2g</li>
+            <li>group 2a</li>
+            <li>group 2b</li>
+            <li>group 2c</li>
+            <li>group 2d</li>
+          </ul>
+          <ul class = 'mm-footer__linksUL'>
+            <li>group 3</li>
+          </ul>
+    </div>
+  </div>
+
+ 
+<script src="shopFront.js"></script>
+<script src="horizontalCarousel.js"></script>
+</body>
+</html>
