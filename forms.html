@@ -238,10 +238,11 @@ e1. When the type attribute has the value "text" or "password", this attribute s
 e2. This number may exceed the specified size, in which case the user agent should offer a scrolling mechanism. 
 e3. The default value for this attribute is an unlimited number.
 
-checked [CI]
-When the type attribute has the value "radio" or "checkbox", this boolean attribute specifies that the button is on. User agents must ignore this attribute for other control types.
-src = uri [CT]
-When the type attribute has the value "image", this attribute specifies the location of the image to be used to decorate the graphical submit button.
+f. checked [CI]
+f1. When the type attribute has the value "radio" or "checkbox", this boolean attribute specifies that the button is on. 
+f2. User agents must ignore this attribute for other control types.
+f3. src = uri [CT] 
+f4. When the type attribute has the value "image", this attribute specifies the location of the image to be used to decorate the graphical submit button.
 Attributes defined elsewhere
 
 id, class (document-wide identifiers)
@@ -258,9 +259,9 @@ accesskey (access keys)
 usemap (client-side image maps)
 ismap (server-side image maps)
 onfocus, onblur, onselect, onchange, onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events)
+
 17.4.1 Control types created with INPUT
 The control type defined by the INPUT element depends on the value of the type attribute:
-
 text
 Creates a single-line text input control.
 password
